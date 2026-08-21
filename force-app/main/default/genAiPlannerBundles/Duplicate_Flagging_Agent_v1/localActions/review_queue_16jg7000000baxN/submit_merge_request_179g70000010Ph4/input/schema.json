@@ -1,0 +1,21 @@
+{
+  "required" : [ "flagId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "adminNotes" : {
+      "title" : "Admin Notes",
+      "description" : "Optional notes for the admin processing the merge request",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "flagId" : {
+      "title" : "Flag ID",
+      "description" : "Salesforce ID of the DuplicateFlag__c record to submit for merge",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

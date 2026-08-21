@@ -1,0 +1,14 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "objectTypeFilter" : {
+      "title" : "Object Type Filter",
+      "description" : "Filter results by Salesforce object type. Accepted values: Account, Contact, Opportunity. Leave blank for all pending flags.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

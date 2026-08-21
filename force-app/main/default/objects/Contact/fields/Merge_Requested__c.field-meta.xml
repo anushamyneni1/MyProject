@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Requested__c</fullName>
+    <label>Merge Requested</label>
+    <description>Indicates that an employee has reviewed this Contact and submitted a merge request to the admin queue. Set to true by the Duplicate Flagging Agent when a merge request is submitted.</description>
+    <inlineHelpText>Checked when a merge request has been submitted for this Contact. Admins should review and process the merge before clearing this flag.</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

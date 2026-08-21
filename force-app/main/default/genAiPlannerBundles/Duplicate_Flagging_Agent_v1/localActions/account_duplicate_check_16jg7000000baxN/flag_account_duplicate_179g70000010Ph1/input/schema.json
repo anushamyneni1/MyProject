@@ -1,0 +1,35 @@
+{
+  "required" : [ "recordId1", "recordId2", "objectType" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "notes" : {
+      "title" : "Notes",
+      "description" : "Optional notes for the admin reviewer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "objectType" : {
+      "title" : "Object Type",
+      "description" : "The Salesforce object type of the flagged records",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "recordId1" : {
+      "title" : "Record ID 1",
+      "description" : "Salesforce ID of the first Account record in the suspected duplicate pair",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "recordId2" : {
+      "title" : "Record ID 2",
+      "description" : "Salesforce ID of the second Account record in the suspected duplicate pair",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

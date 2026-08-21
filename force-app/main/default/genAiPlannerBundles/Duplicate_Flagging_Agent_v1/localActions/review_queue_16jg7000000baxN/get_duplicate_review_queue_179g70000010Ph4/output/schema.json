@@ -1,0 +1,26 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "flaggedPairs" : {
+      "title" : "Flagged Pairs",
+      "description" : "Pending duplicate flag records awaiting admin review",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "@apexClassType/c__DuplicateReviewQueueFetcher$FlaggedPair"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "hasResults" : {
+      "title" : "Has Results",
+      "description" : "True if any pending flags were found",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

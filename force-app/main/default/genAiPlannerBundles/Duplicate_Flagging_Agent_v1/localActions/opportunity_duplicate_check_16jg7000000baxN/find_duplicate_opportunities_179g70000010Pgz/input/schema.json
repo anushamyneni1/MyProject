@@ -1,0 +1,28 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "searchAccountName" : {
+      "title" : "Account Name",
+      "description" : "Account name associated with the Opportunity",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "searchCloseDate" : {
+      "title" : "Close Date",
+      "description" : "Close date or date range to narrow the search (e.g. Q1 2025, 2025-03-31)",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "searchExternalId" : {
+      "title" : "External ID",
+      "description" : "External ID or primary key to match against Opportunity records",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

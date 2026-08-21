@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Internal employee assistant for identifying and flagging duplicate records across Accounts, Contacts, and Opportunities.</description>
+    <localTopicLinks>
+        <genAiPluginName>account_duplicate_check_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>agent_router_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>ambiguous_question_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>contact_duplicate_check_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>off_topic_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>opportunity_duplicate_check_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>review_queue_16jg7000000baxN</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>account_duplicate_check_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Searches for duplicate Account records by name, website, or Tax ID and allows the employee to flag a suspected pair for admin review.</description>
+        <developerName>account_duplicate_check_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph1</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>find_duplicate_accounts_179g70000010Ph1</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>flag_account_duplicate_179g70000010Ph1</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>flag_account_duplicate_179g70000010Ph1</fullName>
+            <description>Creates a DuplicateFlag__c record for two Account records and submits them for admin review.</description>
+            <developerName>flag_account_duplicate_179g70000010Ph1</developerName>
+            <invocationTarget>DuplicateFlagCreator</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>flag_account_duplicate</localDeveloperName>
+            <masterLabel>Flag Account Duplicate</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>find_duplicate_accounts_179g70000010Ph1</fullName>
+            <description>Queries Account records for potential duplicates using name, website, or Tax ID matching. Returns matches with confidence scores.</description>
+            <developerName>find_duplicate_accounts_179g70000010Ph1</developerName>
+            <invocationTarget>DuplicateAccountFinder</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>find_duplicate_accounts</localDeveloperName>
+            <masterLabel>Find Duplicate Accounts</masterLabel>
+        </localActions>
+        <localDeveloperName>account_duplicate_check</localDeveloperName>
+        <masterLabel>Account Duplicate Check</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>agent_router_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Entry point. Routes employees to the correct duplicate-check subagent or the review queue based on their request.</description>
+        <developerName>agent_router_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph0</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph0</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>agent_router</localDeveloperName>
+        <masterLabel>Agent Router</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>contact_duplicate_check_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Searches for duplicate Contact records by email, phone, or name and allows the employee to flag a suspected pair for admin review.</description>
+        <developerName>contact_duplicate_check_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph3</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph3</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>find_duplicate_contacts_179g70000010Ph3</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>flag_contact_duplicate_179g70000010Ph3</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>flag_contact_duplicate_179g70000010Ph3</fullName>
+            <description>Creates a DuplicateFlag__c record for two Contact records and submits them for admin review.</description>
+            <developerName>flag_contact_duplicate_179g70000010Ph3</developerName>
+            <invocationTarget>DuplicateFlagCreator</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>flag_contact_duplicate</localDeveloperName>
+            <masterLabel>Flag Contact Duplicate</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>find_duplicate_contacts_179g70000010Ph3</fullName>
+            <description>Queries Contact records for potential duplicates using email, phone, or name matching. Returns matches with confidence scores.</description>
+            <developerName>find_duplicate_contacts_179g70000010Ph3</developerName>
+            <invocationTarget>DuplicateContactFinder</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>find_duplicate_contacts</localDeveloperName>
+            <masterLabel>Find Duplicate Contacts</masterLabel>
+        </localActions>
+        <localDeveloperName>contact_duplicate_check</localDeveloperName>
+        <masterLabel>Contact Duplicate Check</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>off_topic_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Redirect conversation to relevant topics when the user&apos;s request is outside the scope of duplicate detection.</description>
+        <developerName>off_topic_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph2</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph2</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>off_topic</localDeveloperName>
+        <masterLabel>Off Topic</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>opportunity_duplicate_check_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Searches for duplicate Opportunity records by external ID, account name, or close date and allows the employee to flag a suspected pair for admin review.</description>
+        <developerName>opportunity_duplicate_check_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Pgz</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Pgz</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>find_duplicate_opportunities_179g70000010Pgz</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>flag_opportunity_duplicate_179g70000010Pgz</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>flag_opportunity_duplicate_179g70000010Pgz</fullName>
+            <description>Creates a DuplicateFlag__c record for two Opportunity records and submits them for admin review.</description>
+            <developerName>flag_opportunity_duplicate_179g70000010Pgz</developerName>
+            <invocationTarget>DuplicateFlagCreator</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>flag_opportunity_duplicate</localDeveloperName>
+            <masterLabel>Flag Opportunity Duplicate</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>find_duplicate_opportunities_179g70000010Pgz</fullName>
+            <description>Queries Opportunity records for potential duplicates using external ID, account name, or close date. Returns matches with confidence scores.</description>
+            <developerName>find_duplicate_opportunities_179g70000010Pgz</developerName>
+            <invocationTarget>DuplicateOpportunityFinder</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>find_duplicate_opportunities</localDeveloperName>
+            <masterLabel>Find Duplicate Opportunities</masterLabel>
+        </localActions>
+        <localDeveloperName>opportunity_duplicate_check</localDeveloperName>
+        <masterLabel>Opportunity Duplicate Check</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>ambiguous_question_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Ask for clarification when the user&apos;s request is unclear or too vague to route.</description>
+        <developerName>ambiguous_question_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph5</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph5</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>ambiguous_question</localDeveloperName>
+        <masterLabel>Ambiguous Question</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>review_queue_16jg7000000baxN</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Displays pending duplicate flag records awaiting admin review. Allows employees to select a flag and submit a merge request to the admin queue.</description>
+        <developerName>review_queue_16jg7000000baxN</developerName>
+        <genAiPluginInstructions>
+            <description>You are an internal AI assistant helping Salesforce employees find and flag
+duplicate records. You assist with Accounts, Contacts, and Opportunities.
+You present confidence-scored matches and allow employees to flag record pairs
+for admin review and merge request submission.
+You are an AI assistant, not a human. You never merge or delete records —
+all merge execution requires explicit admin approval.</description>
+            <developerName>instruction0_179g70000010Ph4</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179g70000010Ph4</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>get_duplicate_review_queue_179g70000010Ph4</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>submit_merge_request_179g70000010Ph4</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>submit_merge_request_179g70000010Ph4</fullName>
+            <description>Updates the selected DuplicateFlag__c record status and creates a merge request for admin processing.</description>
+            <developerName>submit_merge_request_179g70000010Ph4</developerName>
+            <invocationTarget>MergeRequestSubmitter</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>submit_merge_request</localDeveloperName>
+            <masterLabel>Submit Merge Request</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>get_duplicate_review_queue_179g70000010Ph4</fullName>
+            <description>Fetches DuplicateFlag__c records with status Pending Review, optionally filtered by object type.</description>
+            <developerName>get_duplicate_review_queue_179g70000010Ph4</developerName>
+            <invocationTarget>DuplicateReviewQueueFetcher</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>get_duplicate_review_queue</localDeveloperName>
+            <masterLabel>Get Duplicate Review Queue</masterLabel>
+        </localActions>
+        <localDeveloperName>review_queue</localDeveloperName>
+        <masterLabel>Review Queue</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>Data Quality &amp; Duplicate Flagging Agent</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlannerBundle>

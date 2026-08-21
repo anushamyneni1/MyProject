@@ -1,0 +1,26 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "hasResults" : {
+      "title" : "Has Results",
+      "description" : "True if one or more duplicate matches were found",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false
+    },
+    "matches" : {
+      "title" : "Matches",
+      "description" : "Potential duplicate Opportunity matches with confidence scores",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "@apexClassType/c__DuplicateOpportunityFinder$DuplicateMatch"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
